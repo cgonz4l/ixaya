@@ -5,8 +5,8 @@ export class Keypress {
         this.target = target
     }
     handle(key: string, fn: () => void): void {
-        this.target.addEventListener('keydown', (ev: KeyboardEvent) => {
-            if(ev.key === key) {
+        this.target.addEventListener('keydown', (ev: Event) => {
+            if((ev as KeyboardEvent).key === key) {
                 fn()
             } 
         })
